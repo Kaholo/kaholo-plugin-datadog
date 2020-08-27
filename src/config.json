@@ -1,0 +1,79 @@
+{
+    "name": "Datadog",
+    "type": "executer",
+    "execProgram": "node",
+    "main": "app.js",
+    "exposeRoute": true,
+    "imgUrl": "datadog.jpeg",
+    "version": "1.0.0",
+    "description": "Handle Datadog REST API integration",
+    "settings": [
+        {
+            "name": "API_KEY",
+            "viewName": "Api Key",
+            "type": "vault"
+        },
+        {
+            "name": "ACCOUNT_NAME",
+            "viewName": "Account Name",
+            "type": "string"
+        }
+    ],
+    "methods": [
+        {
+            "name": "REST",
+            "viewName": "REST Command",
+            "params": [
+                {
+                  "name": "method",
+                  "viewName": "Method",
+                  "type": "options",
+                  "options": [
+                      {
+                          "id":"GET",
+                          "name": "GET"
+                      },
+                      {
+                        "id":"POST",
+                        "name": "POST"
+                      },
+                      {
+                        "id":"DELETE",
+                        "name": "DELETE"
+                      }
+                  ]
+                },
+                {
+                  "name": "url",
+                  "viewName": "URL",
+                  "type": "string"
+                },
+                {
+                  "name": "body",
+                  "viewName": "Body",
+                  "type": "string"
+                },
+                {
+                  "name": "headers",
+                  "viewName": "Headers (Obj)",
+                  "type": "string"
+                },
+                {
+                  "name": "username",
+                  "viewName": "Username",
+                  "type": "string"
+                },
+                {
+                  "name": "password",
+                  "viewName": "Password",
+                  "type": "vault"
+                },
+                {
+                  "name": "bearerToken",
+                  "viewName": "Bearer Token",
+                  "type": "vault"
+                }
+            ]
+        }
+    ]       
+}
