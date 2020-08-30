@@ -8,19 +8,70 @@
     "version": "1.0.0",
     "description": "Handle Datadog REST API integration",
     "settings": [
-        {
+      {
+        "name": "URL",
+        "viewName": "url",
+        "type": "string"
+      },  
+      {
             "name": "API_KEY",
             "viewName": "Api Key",
             "type": "vault"
         },
         {
-            "name": "ACCOUNT_NAME",
-            "viewName": "Account Name",
-            "type": "string"
+            "name": "APP_KEY",
+            "viewName": "Application Key",
+            "type": "vault"
         }
     ],
     "methods": [
-        {
+      {
+        "name":"CREATE_USER",
+        "viewName": "Create User",
+        "params": [
+          {
+            "name": "access_role",
+            "viewName" : "Access Role",
+            "type" : "options",
+            "options": [
+              {
+                "id":"st",
+                "name":"standard user"
+              },
+              {
+                "id":"adm",
+                "name":"admin user"
+              },
+              {
+                "id":"ro",
+                "name":"read only user"
+              }
+            ]
+          },
+          {
+            "name":"disabled",
+            "viewName": "disabled",
+            "type": "boolean"
+          },
+          {
+            "name": "email",
+            "viewName": "email",
+            "type" : "string"
+          },
+          {
+            "name": "handle",
+            "viewName": "handle email",
+            "type" : "string"
+          },
+          {
+            "name": "name",
+            "viewName": "name",
+            "type" : "string"
+          }
+          
+        ]
+      }, 
+      {
             "name": "REST",
             "viewName": "REST Command",
             "params": [
