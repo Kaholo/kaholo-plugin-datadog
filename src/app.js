@@ -25,17 +25,6 @@ async function createUser (action, settings) {
     return sendRequest(requestOptions)
 }
 
-async function generalRest(action) {
-    const requestOptions = {
-        method : action.params.method,
-        url : action.params.url,
-        body : action.params.body,
-        headers : action.params.headers,
-        json: true
-    }
-    return sendRequest(requestOptions)
-}
-
 async function sendRequest(requestOptions) {
     return new Promise((resolve, reject) => {
         request(requestOptions,function (err, response, body) {
