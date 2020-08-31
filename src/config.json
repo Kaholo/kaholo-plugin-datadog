@@ -108,21 +108,6 @@
                   "name": "headers",
                   "viewName": "Headers (Obj)",
                   "type": "string"
-                },
-                {
-                  "name": "username",
-                  "viewName": "Username",
-                  "type": "string"
-                },
-                {
-                  "name": "password",
-                  "viewName": "Password",
-                  "type": "vault"
-                },
-                {
-                  "name": "bearerToken",
-                  "viewName": "Bearer Token",
-                  "type": "vault"
                 }
             ]
         }

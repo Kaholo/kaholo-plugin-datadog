@@ -15,16 +15,24 @@ async function createUser (action, settings) {
         "DD-APPLICATION-KEY":settings.APP_KEY
     };
     const urlApi = settings.URL + "/api/v1/user"
-    const requestOptions = {
-
-
-        
+    const requestOptions = {       
         method: "POST",
         url : urlApi,
         headers : header,
         body: body,
         json: true
     };
+    return sendRequest(requestOptions)
+}
+
+async function generalRest(action) {
+    const requestOptions = {
+        method : action.params.method,
+        url : action.params.url,
+        body : action.params.body,
+        headers : action.params.headers,
+        json: true
+    }
     return sendRequest(requestOptions)
 }
 
@@ -41,5 +49,5 @@ async function sendRequest(requestOptions) {
 
 module.exports = {
     CREATE_USER:createUser,
+    REST:generalRest
 }
-
