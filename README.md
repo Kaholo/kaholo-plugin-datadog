@@ -17,12 +17,3 @@ Create a new user inside Datadog
 3) Email.
 4) Handle.
 5) Name
-
-## REST
-This method will execute REST API request in general.
-
-### Parameters:
-1) Method - POST, GET, DELETE
-2) URL - the complete URL.
-3) headers - a full JSON object from the code (including the API & APP keys).
-4) body - JSON object from the code layer.
